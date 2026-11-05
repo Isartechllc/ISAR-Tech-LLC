@@ -1,9 +1,110 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ISAR TECH LLC | Security Cameras & Sound Systems</title><style>
-*{box-sizing:border-box}body{margin:0;background:#010817;color:white;font-family:Arial,sans-serif}.wrap{width:min(1199px,100%);margin:auto;position:relative}.bg{width:100%;display:block}.logo{position:absolute;object-fit:contain;left:5%;top:1.8%;width:41%;height:12%;mix-blend-mode:screen}.logo2{position:absolute;object-fit:contain;left:58%;top:1.8%;width:38%;height:12%;mix-blend-mode:screen}
-.hit{position:absolute;display:block;cursor:pointer;background:transparent;border:0}.call{left:4%;top:60.9%;width:46%;height:4.2%}.sms{left:4%;top:65.2%;width:46%;height:4.2%}.mail{left:4%;top:69.5%;width:46%;height:4.2%}.quote{left:4%;top:82%;width:46%;height:9%}
-.field{position:absolute;left:63%;width:34%;border:0;outline:0;background:transparent;color:#fff;font-size:clamp(10px,1.65vw,19px);font-family:Arial;padding:0 1%;}.name{top:34%;height:3.1%}.location{top:55.4%;height:3%}.details{top:64%;height:6%;resize:none}.radios{position:absolute;left:58%;top:43%;width:41%;height:11%;display:flex;flex-direction:column;justify-content:space-around}.radios label{height:29%;cursor:pointer}.radios input{accent-color:#00cfff;width:18px;height:18px;margin-left:3%}.send{left:56%;top:74%;width:42%;height:8%;}.send:focus-visible,.hit:focus-visible{outline:3px solid white}
-@media(max-width:650px){.wrap{width:100%;}.field{font-size:1.65vw}.radios input{width:9px;height:9px}.logo,.logo2{object-fit:contain}}
-</style></head><body><main class="wrap"><img class="bg" src="diseno-aprobado.jpg" alt="Tarjeta de ISAR TECH LLC con servicios y formulario de cotización"><img class="logo" src="logo-original.jpg" alt="Logo original ISAR TECH LLC"><img class="logo2" src="logo-original.jpg" alt="Logo original ISAR TECH LLC">
-<a class="hit call" aria-label="Llamar" href="tel:+16149698022"></a><a class="hit sms" aria-label="Enviar mensaje" href="sms:+16149698022"></a><a class="hit mail" aria-label="Enviar correo" href="mailto:isartechllc@gmail.com"></a><button class="hit quote" aria-label="Ir al formulario" onclick="document.getElementById('nombre').focus()"></button>
-<form id="form"><input id="nombre" class="field name" aria-label="Nombre" required autocomplete="name"><div class="radios" role="radiogroup" aria-label="Servicio"><label><input type="radio" name="service" value="Cámaras de seguridad" required aria-label="Cámaras de seguridad"></label><label><input type="radio" name="service" value="Sistemas de sonido" aria-label="Sistemas de sonido"></label><label><input type="radio" name="service" value="Ambos servicios" aria-label="Ambos servicios"></label></div><input id="ubicacion" class="field location" aria-label="Ubicación" required><textarea id="detalles" class="field details" aria-label="Descripción del trabajo" required></textarea><button class="hit send" aria-label="Enviar solicitud" type="submit"></button></form></main>
-<script>document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();const n=document.getElementById('nombre').value,l=document.getElementById('ubicacion').value,d=document.getElementById('detalles').value,s=document.querySelector('input[name=service]:checked')?.value;if(!s){alert('Selecciona un servicio');return}const msg=`Solicitud de cotización - ISAR TECH LLC\nNombre: ${n}\nServicio: ${s}\nUbicación: ${l}\nDetalles: ${d}`;window.location.href='https://wa.me/16149698022?text='+encodeURIComponent(msg)});</script></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#030914">
+<meta name="description" content="ISAR TECH LLC — cámaras de seguridad y sistemas de sonido en Columbus, Ohio.">
+<title>ISAR TECH LLC | Security Cameras & Sound Systems</title>
+<style>
+:root{--bg:#030914;--panel:#071525;--blue:#087bff;--cyan:#10d8ff;--line:#087fba;--white:#f5f8ff;--muted:#b8c8dc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#092c57 0,#030914 48%);color:var(--white);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+.wrap{width:min(1120px,92%);margin:auto}.top{display:flex;justify-content:flex-end;padding:16px 0}.lang{border:1px solid var(--cyan);background:#061a2d;color:white;border-radius:20px;padding:8px 15px;cursor:pointer}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;padding:18px 0 35px}
+.brand{text-align:center}.brand img{width:min(100%,490px);height:auto;display:block;margin:auto;border-radius:12px}.brand h1{font-size:clamp(24px,4vw,38px);margin:15px 0 2px}.brand p{color:var(--cyan);font-weight:bold;margin:0}
+.panel{background:linear-gradient(145deg,#071a2b,#030a14);border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 0 25px #007bff22}
+h2{font-size:clamp(23px,3vw,30px);margin:0 0 4px}.sub{color:var(--muted);margin:0 0 22px}
+.services{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0}
+.service{border:1px solid #126a9b;border-radius:14px;padding:14px;background:#061526;text-align:center}.service .emoji{font-size:38px}.service h3{margin:6px 0 0;font-size:18px}.service p{color:var(--cyan);margin:0}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:20px 0}.feature{text-align:center;border-right:1px solid #126a9b;padding:8px 4px;color:var(--muted);font-size:13px}.feature b{display:block;color:var(--cyan);font-size:23px}
+.contact{display:grid;gap:9px;margin-top:20px}.contact a{display:block;text-decoration:none;color:white;background:#06182a;border:1px solid #126a9b;border-radius:12px;padding:12px 15px}.contact strong{color:var(--cyan);display:block}
+.cta{display:inline-block;text-align:center;margin-top:18px;padding:14px 24px;border-radius:14px;background:linear-gradient(110deg,#08c9ff,#0755e9);color:white;text-decoration:none;font-weight:bold;font-size:18px;box-shadow:0 0 18px #078bff66}
+.formhead{display:flex;align-items:center;gap:12px;border:2px solid var(--cyan);border-radius:14px;padding:14px;margin-bottom:12px}.formhead .emoji{font-size:32px}.formhead h2{font-size:24px}
+label{display:block;font-weight:bold;margin:13px 0 6px}input,textarea{width:100%;border:1px solid #168bc4;border-radius:10px;padding:13px;background:#020b16;color:white;font:inherit}input::placeholder,textarea::placeholder{color:#91a8bf}fieldset{border:1px solid #168bc4;border-radius:12px;margin:15px 0;padding:12px}legend{font-weight:bold;padding:0 6px}.choice{display:flex;align-items:center;gap:10px;margin:9px 0;font-weight:normal}.choice input{width:auto;accent-color:#08cfff}
+button.send{width:100%;border:0;border-radius:14px;padding:16px;margin-top:16px;background:linear-gradient(110deg,#08c9ff,#0755e9);color:white;font-weight:bold;font-size:19px;cursor:pointer}
+.note{font-size:12px;color:var(--muted);text-align:center;margin-top:12px}.footer{text-align:center;color:#829ab3;padding:25px 0 35px;font-size:13px}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.panel{padding:18px}.features{grid-template-columns:repeat(2,1fr)}.brand img{max-width:420px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><button class="lang" id="langBtn" type="button">English</button></div>
+  <main class="hero">
+    <section>
+      <div class="brand">
+        <img src="assets/logo-original.jpg" alt="ISAR TECH LLC original logo">
+        <h1 data-es="Cámaras de seguridad y sistemas de sonido" data-en="Security Cameras & Sound Systems">Cámaras de seguridad y sistemas de sonido</h1>
+        <p data-es="Security Cameras & Sound Systems" data-en="Cámaras de seguridad y sistemas de sonido">Security Cameras & Sound Systems</p>
+      </div>
+      <div class="services">
+        <div class="service"><div class="emoji">📹</div><h3 data-es="Cámaras de seguridad" data-en="Security Cameras">Cámaras de seguridad</h3><p data-es="Security Cameras" data-en="Cámaras de seguridad">Security Cameras</p></div>
+        <div class="service"><div class="emoji">🔊</div><h3 data-es="Sistemas de sonido" data-en="Sound Systems">Sistemas de sonido</h3><p data-es="Sound Systems" data-en="Sistemas de sonido">Sound Systems</p></div>
+      </div>
+      <div class="features">
+        <div class="feature"><b>🛠</b><span data-es="Instalación" data-en="Installation">Instalación</span></div>
+        <div class="feature"><b>⚙️</b><span data-es="Configuración" data-en="Setup">Configuración</span></div>
+        <div class="feature"><b>🎧</b><span data-es="Soporte" data-en="Support">Soporte</span></div>
+        <div class="feature"><b>🛡️</b><span data-es="Calidad y confianza" data-en="Quality & Trust">Calidad y confianza</span></div>
+      </div>
+      <div class="contact">
+        <a href="tel:+16149698022">📞 <strong data-es="Llamar" data-en="Call">Llamar</strong>+1 (614) 969-8022</a>
+        <a href="sms:+16149698022">💬 <strong data-es="Enviar mensaje" data-en="Send Message">Enviar mensaje</strong>+1 (614) 969-8022</a>
+        <a href="mailto:isartechllc@gmail.com">✉️ <strong data-es="Correo" data-en="Email">Correo</strong>isartechllc@gmail.com</a>
+        <a href="https://maps.google.com/?q=Columbus+Ohio" target="_blank" rel="noopener">📍 <strong>Columbus, OH</strong><span data-es="y alrededores" data-en="and surrounding areas">y alrededores</span></a>
+      </div>
+      <a class="cta" href="#quote" data-es="Solicitar cotización　›" data-en="Request a Quote　›">Solicitar cotización　›</a>
+    </section>
+    <section class="panel" id="quote">
+      <div class="formhead"><span class="emoji">📋</span><h2 data-es="Solicitud de cotización" data-en="Request a Quote">Solicitud de cotización</h2></div>
+      <p class="sub" data-es="Cuéntanos qué necesitas y te contactaremos pronto." data-en="Tell us what you need and we'll get back to you soon.">Cuéntanos qué necesitas y te contactaremos pronto.</p>
+      <form id="quoteForm">
+        <label for="name" data-es="Nombre / Name *" data-en="Name / Nombre *">Nombre / Name *</label>
+        <input id="name" name="name" required autocomplete="name" placeholder="Tu nombre / Your name">
+        <fieldset><legend data-es="¿Qué servicio necesitas? *" data-en="What service do you need? *">¿Qué servicio necesitas? *</legend>
+          <label class="choice"><input type="radio" name="service" value="Cámaras de seguridad / Security Cameras" required> 📹 <span data-es="Cámaras de seguridad" data-en="Security Cameras">Cámaras de seguridad</span></label>
+          <label class="choice"><input type="radio" name="service" value="Sistemas de sonido / Sound Systems"> 🔊 <span data-es="Sistemas de sonido" data-en="Sound Systems">Sistemas de sonido</span></label>
+          <label class="choice"><input type="radio" name="service" value="Ambos servicios / Both Services"> 📹🔊 <span data-es="Ambos servicios" data-en="Both Services">Ambos servicios</span></label>
+        </fieldset>
+        <label for="location" data-es="Ubicación / Location *" data-en="Location / Ubicación *">Ubicación / Location *</label>
+        <input id="location" name="location" required placeholder="Ciudad, estado o zona / City, state or area">
+        <label for="email" data-es="Tu correo / Your email" data-en="Your email / Tu correo">Tu correo / Your email</label>
+        <input id="email" name="email" type="email" placeholder="name@example.com">
+        <label for="details" data-es="Descripción del trabajo / Project Details *" data-en="Project Details / Descripción del trabajo *">Descripción del trabajo / Project Details *</label>
+        <textarea id="details" name="details" rows="4" required placeholder="Cuéntanos más detalles sobre tu proyecto... / Tell us more about your project..."></textarea>
+        <button class="send" type="submit" data-es="Enviar solicitud　➤" data-en="Send Request　➤">Enviar solicitud　➤</button>
+        <p class="note" data-es="Al presionar enviar, se abrirá tu aplicación de correo con la solicitud preparada. Debes presionar Enviar allí para que recibamos tu mensaje." data-en="Pressing send opens your email app with the request prepared. You must press Send there for us to receive your message.">Al presionar enviar, se abrirá tu aplicación de correo con la solicitud preparada. Debes presionar Enviar allí para que recibamos tu mensaje.</p>
+      </form>
+    </section>
+  </main>
+  <footer class="footer">© <span id="year"></span> ISAR TECH LLC · Columbus, Ohio</footer>
+</div>
+<script>
+let lang='es';
+document.getElementById('langBtn').addEventListener('click',()=>{
+  lang=lang==='es'?'en':'es';
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-es]').forEach(el=>el.textContent=el.dataset[lang]);
+  document.getElementById('langBtn').textContent=lang==='es'?'English':'Español';
+});
+document.getElementById('quoteForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=new FormData(e.target);
+  const subject=encodeURIComponent('ISAR TECH LLC - Quote Request');
+  const body=encodeURIComponent(
+`New quote request / Nueva solicitud de cotización
+
+Name: ${f.get('name')}
+Service: ${f.get('service')}
+Location: ${f.get('location')}
+Customer email: ${f.get('email')||'Not provided'}
+Project details:
+${f.get('details')}
+
+Sent from the ISAR TECH LLC website.`
+  );
+  window.location.href=`mailto:isartechllc@gmail.com?subject=${subject}&body=${body}`;
+});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
